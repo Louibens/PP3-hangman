@@ -1,31 +1,177 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman - Python
 
-Welcome Louise Benson,
+[View the live project here]( )
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![image](put image here)
 
-## Reminders
+This is a game of Hangman built using Python which runs in the Code Institute mock terminal on Heroku.
+Users will be able to enter their username, play the game of hangman and view a leaderboard. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## User Experience (UX)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+-   ### User stories
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+    -   #### First Time Visitor Goals
+        1. As a First Time Visitor, I want to easily understand the main purpose of the site.
+        2. As a First Time Visitor, I want to be able to easily view the instructions on how to play.
+        3. As a First Time Visitor, I want to be able to easily interact with the site to tner my username.
+        4. As a First Time Visitor, I want to be able to access the leaderboard.
+        5. As a First Time Visitor, I want to be able to easily play another game or quit when I want.
+        
+    -   #### Returning Visitor Goals
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+        1. As a Returning Visitor, I want to be able to access and view the quiz quickly and easily.
 
-Connect your GitHub repository and deploy as normal.
+    -   #### Frequent Visitor Goals
+    
+        1. As a Frequent Visitor, I want to be able to find different categories to keep the game interesting.
+      
+## Features
 
-## Constraints
+#### Existing Features
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- __F01 Title__
 
------
-Happy coding!
+    - fwwggw
+
+![image]( )
+
+    
+- __F02 Home screen__
+
+    - cefewggw
+
+    
+- __F03 Hangman screen__
+    
+    - gregege
+    
+- __F04 Leaderboard screen__
+    
+    - grege
+    
+
+#### Future Features
+
+- Categories can be added for future development to ensure return users are getting value and finding new things to keep them interested
+
+
+## Design
+
+-   ### Title/Logo
+    -   gegege
+
+-   ### Imagery
+    -   gergeger
+
+-   ### Colour
+    -   ververbe
+
+
+-   ### Flow chart
+
+#### Home Screen chart
+![image]( )
+
+#### Quiz Screen chart
+![image]( )
+
+#### Leaderboard Screen chart
+![image]( )
+
+## Technologies Used
+
+### Languages Used
+
+-   [Python](https://www.python.org/)
+
+
+### Python Modules
+
+* [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - to select random words from the list when reviewing.
+
+* [gspread](https://docs.gspread.org/en/latest/index.html) - to edit worksheets on Google Sheets.
+
+* [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html) - to connect with Google account and have access to Google Drive.
+
+* [colorama](https://pypi.org/project/colorama/) - to add colour to the messages and logo.
+
+* [string](https://docs.python.org/3/library/string.html?highlight=string#module-string) - .
+
+### Frameworks, Libraries & Programs Used
+
+This project used:
+
+* [Git](https://git-scm.com/) for version control.
+
+* [GitHub](https://github.com/) to store the project files.
+
+* [VS Code](https://code.visualstudio.com/) as the IDE for development.
+
+* [Heroku](https://www.heroku.com/home/) to deploy the website.
+
+* [Lucidchart](https://www.lucidchart.com/) to create the flow chart.
+
+* [patorjk - Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Ogre&t=Pocket%20%0A%20%20%20%20%20%20%20%20of%20%0AWords) to convert text to ASCII and create the logo.
+    
+## Testing
+
+### Manual Test Cases and Results
+
+- kiku
+
+ ### Automated Validator Testing
+
+- [HTML Validator](https://validator.w3.org/)
+
+    - result for index.html
+
+    ![image]( )
+
+ - [CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+    ![image]( )
+
+- [PageSpeed Insights](https://pagespeed.web.dev/)
+
+
+
+## Deployment
+
+### How this site was deployed
+
+- Login to Github
+- gegege
+  
+### How to clone the repository
+
+- vree
+
+### How to clone the repository
+
+- Ggeerebe
+
+## Credits
+
+### Content
+
+- Avvfdve
+
+### Code research
+
+- Some elements of the javascript code were researched on a youtube tutorial by Web Dev Simplified [Link](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1124s)
+
+### Acknowledgements
+
+- Thank you to my family that have made the time for me to get my head around javascript (to some extent). And for continually testing and providing feedback so I could push myself and improve my knowledge along with the site.
+- A massive thanks also goes to my mentor, Elaine Roche, who continues to support me and help me to grow with her excellent feedback and expertise which has been much appreciated throughout the development of this project.

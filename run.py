@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import random
 import string
+from colorama import Fore
 
 
 SCOPE = [
@@ -20,8 +21,21 @@ words = SHEET.worksheet('words')
 
 word_options = words.get_all_values() #returns list of lists
 
-data = leaderboard.get_all_values()
+leaderboard_data = leaderboard.get_all_values()
 
+logo = '''
+/$$   /$$                                                                
+| $$  | $$                                                                
+| $$  | $$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$$ 
+| $$$$$$$$ |____  $$| $$__  $$ /$$__  $$| $$_  $$_  $$ |____  $$| $$__  $$
+| $$__  $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$ \ $$ \ $$  /$$$$$$$| $$  \ $$
+| $$  | $$ /$$__  $$| $$  | $$| $$  | $$| $$ | $$ | $$ /$$__  $$| $$  | $$
+| $$  | $$|  $$$$$$$| $$  | $$|  $$$$$$$| $$ | $$ | $$|  $$$$$$$| $$  | $$
+|__/  |__/ \_______/|__/  |__/ \____  $$|__/ |__/ |__/ \_______/|__/  |__/
+                               /$$  \ $$                                  
+                              |  $$$$$$/                                  
+                               \______/   
+'''
 
 def get_word(word_options):
     '''
@@ -47,10 +61,12 @@ def hangman():
     lives = 7
     points = 0
 
+    print(logo)
+
     while len(word_letters) > 0 and lives > 0:
 
-        print('You have used these letters: ', ' '.join(guessed_letters),'\n')
-        print('You have', lives, 'lives left\n')
+        print(Fore.WHITE + 'You have used these letters: ', ' '.join(guessed_letters),'\n')
+        print(Fore.WHITE + 'You have', lives, 'lives left\n')
 
         word_list = [letter if letter in guessed_letters else '_' for letter in selected_word]
         print('Current word: ', ' '.join(word_list), '\n')
@@ -58,7 +74,7 @@ def hangman():
         '''
         Get user input
         '''
-        user_guess = input('Pick a letter: \n').upper()
+        user_guess = input(Fore.WHITE + 'Pick a letter: \n').upper()
 
         if user_guess in alphabet - guessed_letters:
             guessed_letters.add(user_guess)
@@ -68,17 +84,17 @@ def hangman():
 
             else:
                 lives = lives - 1
-                print('That letter is not in the word.\n')
+                print(Fore.RED + 'That letter is not in the word.\n')
 
         elif user_guess in guessed_letters:
-            print('You have already picked that letter. Please try again.\n')
+            print(Fore.RED + 'You have already picked that letter. Please try again.\n')
 
         else:
-            print('Invalid choice. Please choose a letter of the alphabet.\n')
+            print(Fore.RED + 'Invalid choice. Please choose a letter of the alphabet.\n')
 
     if lives == 0:
-        print('You just died. The word was', selected_word, '\n')
+        print(Fore.RED + 'You just died. The word was', selected_word, '\n')
     else:
-        print('Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
+        print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
 
 hangman()

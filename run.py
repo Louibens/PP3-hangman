@@ -81,10 +81,11 @@ def hangman():
             if user_guess in word_letters:
                 word_letters.remove(user_guess)
                 points += 50
+                print(Fore.GREEN + 'That letter is in the word.\n')
 
             else:
                 lives = lives - 1
-                print(Fore.RED + 'That letter is not in the word.\n')
+                print(Fore.RED + 'That letter is NOT in the word.\n')
 
         elif user_guess in guessed_letters:
             print(Fore.RED + 'You have already picked that letter. Please try again.\n')

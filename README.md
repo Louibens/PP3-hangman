@@ -169,7 +169,7 @@ This project used:
 
 ### Code research
 
-- Some elements of the javascript code were researched on a youtube tutorial by Web Dev Simplified [Link](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1124s)
+- Typewriter effect researched on Stack Overflow [Link](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
 
 ### Acknowledgements
 

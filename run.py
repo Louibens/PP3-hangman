@@ -64,7 +64,7 @@ def welcome_msg():
     print(LOGO)
     type(f"E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
-    username = input(Fore.WHITE + 'Enter a username: ').upper()
+    username = input(Fore.WHITE + 'Enter a username: \n').upper()
 
 
 
@@ -80,7 +80,7 @@ def game_menu():
         C - INSTRUCTIONS
         D - EXIT GAME
         """)
-    user_choice = input(Fore.WHITE + 'Please choose an option from the list above: ').upper()
+    user_choice = input(Fore.WHITE + 'Please choose an option from the list above: \n').upper()
 
     if user_choice == 'A':
         hangman()
@@ -116,7 +116,7 @@ def hangman():
         '''
         Get user input
         '''
-        user_guess = input(Fore.WHITE + 'Pick a letter: ').upper()
+        user_guess = input(Fore.WHITE + 'Pick a letter: \n').upper()
         
         if user_guess in alphabet - guessed_letters:
             guessed_letters.add(user_guess)

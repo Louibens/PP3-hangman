@@ -6,6 +6,7 @@ from colorama import Fore
 import sys
 import time
 from hangman_parts import parts
+from hangman_parts import graphics
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -106,7 +107,7 @@ def hangman():
     points = 0
 
     while len(word_letters) > 0 and lives > 0:
-        print(parts(wrong))
+        print(graphics[wrong])
         print(Fore.WHITE + 'You have', lives, 'lives left\n')
         print(Fore.WHITE + 'You have used these letters: ', ' '.join(guessed_letters),'\n')
 
@@ -123,12 +124,12 @@ def hangman():
             if user_guess in word_letters:
                 word_letters.remove(user_guess)
                 points += 50
-                print(Fore.GREEN + user_guess, ' is in the word.\n')
+                print(Fore.GREEN + user_guess, ' is in the word.')
 
             else:
                 lives = lives - 1
                 wrong = wrong + 1
-                print(Fore.RED + user_guess,' is NOT in the word.\n')
+                print(Fore.RED + user_guess,' is NOT in the word.')
 
         elif user_guess in guessed_letters:
             print(Fore.RED + 'You have already picked', user_guess, '. Please try again.\n')

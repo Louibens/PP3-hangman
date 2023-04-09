@@ -122,7 +122,7 @@ This project used:
 
 * [Lucidchart](https://www.lucidchart.com/) to create the flow chart.
 
-* [patorjk - Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Ogre&t=Pocket%20%0A%20%20%20%20%20%20%20%20of%20%0AWords) to convert text to ASCII and create the logo.
+* [patorjk - Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne&t=Hangman) to convert text to ASCII and create the logo.
     
 ## Testing
 

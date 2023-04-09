@@ -138,6 +138,7 @@ def hangman():
 
     if lives == 0:
         print(parts(7))
+        print(parts(9))
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')

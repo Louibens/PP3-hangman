@@ -117,28 +117,22 @@ LOGO = '''
                                \______/   
 '''
 
-game_rules = [
- """
+game_rules = """
     _________________________________________________________________________
    |   ___________________________________________________________________   |
    |  |                                                                   |  |
    |  |                ===============================                    |  |
-   |  |                | |                         | |                    |  |
    |  |                | |   G A M E   R U L E S   | |                    |  |
-   |  |                | |                         | |                    |  |
    |  |                ===============================                    |  |
    |  |                                                                   |  |
-   |  |  1 - You have 7 attempts to try to find the right word by         |  |
-   |  |      inputting letters or the full word                           |  |
-   |  |  2 - If you guess a wrong letter you will lose an attempt and the |  |
-   |  |      hangman will begin building                                  |  |
-   |  |  3 - When you reach 0 lives you will be hanged - Game Over        |  |
+   |  |  1 - You start with 7 lives and start guessing letters            |  |
+   |  |  2 - You will lose a life if you guess a wrong letter             |  |
+   |  |  3 - If you reach 0 lives you will be hanged - Game Over          |  |
+   |  |                                                                   |  |
    |  |  POINTS:                                                          |  |
-   |  |  * 25 points per letter guessed right                             |  |
-   |  |  * 200 points if you guessed the right word                       |  |
-   |  |  * 500 extra points to complete the full word with max 3 letters  |  |
-   |  |    already guessed.                                               |  |
+   |  |  * You start with 10 points per letter in the word plus 50        |  |
+   |  |  * You lose 10 points for every wrong letter guessed              |  |
+   |  |  * Try for the highest score to make it onto the leaderboard      |  |
    |  |___________________________________________________________________|  |
    |_________________________________________________________________________|
 """
-]

@@ -7,6 +7,7 @@ import sys
 import time
 from hangman_parts import graphics
 from hangman_parts import LOGO
+from hangman_parts import game_rules
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -144,6 +145,15 @@ def hangman():
         print(graphics[8])
 
 
+def display_instructions():
+    print(game_rules)
+    while True:        
+        go_back = input(Fore.WHITE + 'Please hit B to go back \n').upper()
+        if go_back == 'B':
+            game_menu()
+        else:
+            print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
+            
 welcome_msg()
 game_menu()
 

@@ -84,14 +84,38 @@ def game_menu():
             exit()
         else:
             print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
-            
+
+
+def end_menu():
+    '''
+    present user with menu options at the end of game
+    '''
+    print( f"""{Fore.WHITE}
+        A - PLAY AGAIN
+        B - LEADERBOARD
+        C - INSTRUCTIONS
+        D - EXIT GAME
+        """)
+    while True:        
+        user_choice = input(Fore.WHITE + 'Please choose an option from the list above: \n').upper()
+        if user_choice == 'A':
+            hangman()
+        elif user_choice == 'B':
+            display_leaderboard()
+        elif user_choice == 'C':
+            display_instructions()  
+        elif user_choice == 'D':
+            print(f'Thanks for playing')
+            exit()
+        else:
+            print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
 
 def hangman():
     '''
     use get_word function to select random word and begin game
     '''
     print("\n")
-    print(f"Great! Let's get started")
+    print(f"Great! Let's get started!")
     type(f"S E L E C T I N G   W O R D . . . ."'\n')
     type(f"L E T 'S   G O!!"'\n')
     
@@ -140,9 +164,11 @@ def hangman():
         print(graphics[7])
         print(graphics[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
+        end_menu()
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
         print(graphics[8])
+        end_menu()
 
 
 def display_instructions():

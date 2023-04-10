@@ -6,6 +6,7 @@ from colorama import Fore
 import sys
 import time
 from hangman_parts import graphics
+from hangman_parts import LOGO
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -23,19 +24,6 @@ words = SHEET.worksheet('words')
 
 word_options = words.get_all_values() #returns list of lists
 
-LOGO = '''
-/$$   /$$                                                                
-| $$  | $$                                                                
-| $$  | $$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$$ 
-| $$$$$$$$ |____  $$| $$__  $$ /$$__  $$| $$_  $$_  $$ |____  $$| $$__  $$
-| $$__  $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$ \ $$ \ $$  /$$$$$$$| $$  \ $$
-| $$  | $$ /$$__  $$| $$  | $$| $$  | $$| $$ | $$ | $$ /$$__  $$| $$  | $$
-| $$  | $$|  $$$$$$$| $$  | $$|  $$$$$$$| $$ | $$ | $$|  $$$$$$$| $$  | $$
-|__/  |__/ \_______/|__/  |__/ \____  $$|__/ |__/ |__/ \_______/|__/  |__/
-                               /$$  \ $$                                  
-                              |  $$$$$$/                                  
-                               \______/   
-'''
 
 def type(text):
   words = text
@@ -68,10 +56,9 @@ def welcome_msg():
             username = input(Fore.WHITE + 'Enter a username: \n')
             if len(username) == 0:
                 print(f"{Fore.RED}Please enter a valid username to continue!")
-                username = input(Fore.WHITE + 'Enter a username: \n')
             else:
                 return username
-                break
+                
 
 def game_menu():
     '''
@@ -83,19 +70,20 @@ def game_menu():
         C - INSTRUCTIONS
         D - EXIT GAME
         """)
-    user_choice = input(Fore.WHITE + 'Please choose an option from the list above: \n').upper()
-    try:
+    while True:        
+        user_choice = input(Fore.WHITE + 'Please choose an option from the list above: \n').upper()
         if user_choice == 'A':
             hangman()
         elif user_choice == 'B':
-            return display_leaderboard()
+            display_leaderboard()
         elif user_choice == 'C':
-            return display_instructions()  
+            display_instructions()  
         elif user_choice == 'D':
-            print(f'Thanks for playing,', welcome_msg())
+            print(f'Thanks for playing')
             exit()
-    except:
-        print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
+        else:
+            print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
+            
 
 def hangman():
     '''
@@ -112,7 +100,7 @@ def hangman():
     guessed_letters = set()
     wrong = 0
     lives = 7
-    points = len(selected_word) * 10
+    points = (len(selected_word) * 10) + 50
 
     while len(word_letters) > 0 and lives > 0:
         print(graphics[wrong])

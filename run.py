@@ -5,7 +5,6 @@ import string
 from colorama import Fore
 import sys
 import time
-from hangman_parts import parts
 from hangman_parts import graphics
 
 SCOPE = [
@@ -104,12 +103,13 @@ def hangman():
     guessed_letters = set()
     wrong = 0
     lives = 7
-    points = 0
+    points = len(selected_word) * 10
 
     while len(word_letters) > 0 and lives > 0:
         print(graphics[wrong])
         print(Fore.WHITE + 'You have', lives, 'lives left\n')
         print(Fore.WHITE + 'You have used these letters: ', ' '.join(guessed_letters),'\n')
+        print(Fore.WHITE + 'You have: ', points, 'points.\n')
 
         word_list = [letter if letter in guessed_letters else '_' for letter in selected_word]
         print('Selected word: ', ' '.join(word_list), )
@@ -123,12 +123,13 @@ def hangman():
             guessed_letters.add(user_guess)
             if user_guess in word_letters:
                 word_letters.remove(user_guess)
-                points += 50
+                
                 print(Fore.GREEN + user_guess, ' is in the word.')
 
             else:
                 lives = lives - 1
                 wrong = wrong + 1
+                points = points - 10
                 print(Fore.RED + user_guess,' is NOT in the word.')
 
         elif user_guess in guessed_letters:
@@ -138,12 +139,12 @@ def hangman():
             print(Fore.RED + 'Invalid choice. Please choose a letter of the alphabet.\n')
 
     if lives == 0:
-        print(parts(7))
-        print(parts(9))
+        print(graphics[7])
+        print(graphics[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
-        print(parts(8))
+        print(graphics[8])
 
 
 welcome_msg()

@@ -42,23 +42,33 @@ Users will be able to enter their username, play the game of hangman and view a 
 
 - __F01 Title__
 
-    - fwwggw
+    - Game starts by displaying typed message to welcome user to the game of hangman.
 
-![image]( )
-
-    
-- __F02 Home screen__
-
-    - cefewggw
 
     
-- __F03 Hangman screen__
+- __F02 Username__
+
+    - The user is invited to enter their name in order to continue.
+    - The user will see an error if they do not enter a name.
+
+
+- __F03 Instructions screen__
     
-    - gregege
+    - The user can see how the game is played.
+    - The user can return to the main menu.
     
-- __F04 Leaderboard screen__
+- __F04 Hangman screen__
     
-    - grege
+    - The user can see how many points they have.
+    - The user can see how many letters are in the randomly selected word.
+    - The user can see which letters they have already chosen.
+    - The user can see which letters are in the selected word.
+    - The user can see a hangman graphic illustrating the hangman body parts.
+    
+- __F05 Leaderboard screen__
+    
+    - The user can see the top 10 leaderboard.
+    - The user can return to the main menu.
     
 
 #### Future Features
@@ -69,16 +79,18 @@ Users will be able to enter their username, play the game of hangman and view a 
 ## Design
 
 -   ### Title/Logo
-    -   gegege
+    -   The Hangman title/logo was created on patorjk.com. This design was selected as it is easy for the user to read and has a strong impact on the screen
 
 -   ### Imagery
-    -   gergeger
+    -   The hangman graphics are adapted from [Tech With Mike](https://www.mrmichaelsclass.com/python-programming/python-projects/hangman#h.p_gOiYJsG0n6_P)
 
 -   ### Colour
-    -   ververbe
+    -   Imported colorama to enable different colour text to improve user experience and user feedback
 
 
 -   ### Flow chart
+
+    ![image](/docs/flowchart.png)
 
 #### Home Screen chart
 ![image]( )
@@ -98,13 +110,13 @@ Users will be able to enter their username, play the game of hangman and view a 
 
 ### Python Modules
 
-* [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - to select random words from the list when reviewing.
+* [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - to select random words 
 
 * [gspread](https://docs.gspread.org/en/latest/index.html) - to edit worksheets on Google Sheets.
 
 * [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html) - to connect with Google account and have access to Google Drive.
 
-* [colorama](https://pypi.org/project/colorama/) - to add colour to the messages and logo.
+* [colorama](https://pypi.org/project/colorama/) - to add colour to the text displayed to user.
 
 * [string](https://docs.python.org/3/library/string.html?highlight=string#module-string) - .
 
@@ -122,7 +134,7 @@ This project used:
 
 * [Lucidchart](https://www.lucidchart.com/) to create the flow chart.
 
-* [patorjk - Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne&t=Hangman) to convert text to ASCII and create the logo.
+* [patorjk - Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne&t=Hangman) to create the logo and win/lose graphic displays.
     
 ## Testing
 
@@ -169,6 +181,9 @@ This project used:
 
 ### Code research
 
+- Initial inspiration to build hangman game from Code Institute PP3 MVP example project [Link](https://github.com/PedroCristo/portfolio_project_3)
+- Research ways to code hangman game Youtube [Link](https://www.youtube.com/watch?v=7sVnul-StrU&t=944s)
+- Research ways to code hangman game YouTube provided by [freeCodeCamp.org](https://www.youtube.com/watch?v=8ext9G7xspg)
 - Typewriter effect researched on Stack Overflow [Link](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
 
 ### Acknowledgements

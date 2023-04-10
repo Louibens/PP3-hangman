@@ -179,7 +179,10 @@ def display_instructions():
             game_menu()
         else:
             print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
-            
+
+
+
+
 welcome_msg()
 game_menu()
 

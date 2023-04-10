@@ -64,11 +64,14 @@ def welcome_msg():
     print(LOGO)
     type(f"E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
-    username = input(Fore.WHITE + 'Enter a username: \n').upper()
-
-
-
-
+    while True:
+            username = input(Fore.WHITE + 'Enter a username: \n')
+            if len(username) == 0:
+                print(f"{Fore.RED}Please enter a valid username to continue!")
+                username = input(Fore.WHITE + 'Enter a username: \n')
+            else:
+                return username
+                break
 
 def game_menu():
     '''
@@ -81,12 +84,18 @@ def game_menu():
         D - EXIT GAME
         """)
     user_choice = input(Fore.WHITE + 'Please choose an option from the list above: \n').upper()
-
-    if user_choice == 'A':
-        hangman()
-    elif user_choice == 'B':
-        return display_leaderboard()
-    
+    try:
+        if user_choice == 'A':
+            hangman()
+        elif user_choice == 'B':
+            return display_leaderboard()
+        elif user_choice == 'C':
+            return display_instructions()  
+        elif user_choice == 'D':
+            print(f'Thanks for playing,', welcome_msg())
+            exit()
+    except:
+        print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
 
 def hangman():
     '''

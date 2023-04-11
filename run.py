@@ -59,7 +59,7 @@ def welcome_msg():
                 print(f"{Fore.RED}Please enter a valid username to continue!")
             else:
                 return username
-                
+        
 
 def game_menu():
     '''
@@ -114,6 +114,7 @@ def hangman():
     '''
     use get_word function to select random word and begin game
     '''
+
     print("\n")
     print(f"Great! Let's get started!")
     type(f"S E L E C T I N G   W O R D . . . ."'\n')
@@ -180,10 +181,8 @@ def display_instructions():
         else:
             print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
 
-
-
-
 welcome_msg()
 game_menu()
+
 
 

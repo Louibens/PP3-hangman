@@ -183,7 +183,7 @@ This project used:
 
 - Initial inspiration to build hangman game from Code Institute PP3 MVP example project [Link](https://github.com/PedroCristo/portfolio_project_3)
 - Research ways to code hangman game Youtube [Link](https://www.youtube.com/watch?v=7sVnul-StrU&t=944s)
-- Research ways to code hangman game YouTube provided by [freeCodeCamp.org](https://www.youtube.com/watch?v=8ext9G7xspg)
+- Research ways to code hangman game YouTube provided by [freeCodeCamp Youtube](https://www.youtube.com/watch?v=8ext9G7xspg)
 - Typewriter effect researched on Stack Overflow [Link](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
 
 ### Acknowledgements

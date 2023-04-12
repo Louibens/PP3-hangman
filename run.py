@@ -9,6 +9,7 @@ from hangman_parts import graphics
 from hangman_parts import LOGO
 from hangman_parts import game_rules
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -51,8 +52,25 @@ def update_leaderboard():
     entry = [username,final_points]
     leaderboard = SHEET.worksheet('leaderboard')
     leaderboard.append_row(entry)
-    print(f'leaderboard updated')
 
+  
+
+def display_leaderboard():
+    """
+    Displays the top 10 scores
+    Filters to only show users top score so same user is not displayed multiple times
+    """
+    leaderboard = SHEET.worksheet('leaderboard')
+    leaderboard_data = leaderboard.get_all_values()
+
+    print(leaderboard_data)
+
+    while True:        
+        go_back = input(Fore.WHITE + 'Please hit B to go back \n').upper()
+        if go_back == 'B':
+            game_menu()
+        else:
+            print(f'{Fore.RED} That is not a valid option. Please try again.\n')  
 
 def welcome_msg():
     '''

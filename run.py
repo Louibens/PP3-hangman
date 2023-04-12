@@ -20,18 +20,18 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
-
 words = SHEET.worksheet('words')
-
 word_options = words.get_all_values() #returns list of lists
 
-
 def type(text):
-  words = text
-  for char in words:
-    time.sleep(0.1)
-    sys.stdout.write(char)
-    sys.stdout.flush()
+    '''
+    Function to enable typewriter effect
+    '''
+    words = text
+    for char in words:
+        time.sleep(0.1)
+        sys.stdout.write(char)
+        sys.stdout.flush()
 
 
 def get_word(word_options):
@@ -41,7 +41,6 @@ def get_word(word_options):
     '''
     single_list = [item for sublist in word_options for item in sublist]
     word = random.choice(single_list)
-
     return word.upper()
 
 
@@ -65,7 +64,7 @@ def welcome_msg():
     print("\n")
     while True:
             global username
-            username = input(Fore.WHITE + 'Enter a username: \n')
+            username = input(Fore.WHITE + 'Enter a username: \n').capitalize()
             if len(username) == 0:
                 print(f"{Fore.RED}Please enter a valid username to continue!")
             else:
@@ -125,7 +124,6 @@ def hangman():
     '''
     use get_word function to select random word and begin game
     '''
-
     print("\n")
     print(f"Great! Let's get started!")
     type(f"S E L E C T I N G   W O R D . . . ."'\n')
@@ -137,9 +135,7 @@ def hangman():
     guessed_letters = set()
     wrong = 0
     lives = 7
-    global final_points
     points = (len(selected_word) * 10) + 50
-    
 
     while len(word_letters) > 0 and lives > 0:
         print(graphics[wrong])
@@ -150,10 +146,8 @@ def hangman():
         word_list = [letter if letter in guessed_letters else '_' for letter in selected_word]
         print('Selected word: ', ' '.join(word_list), )
         print("====================================\n")
-        '''
-        Get user input
-        '''
-        user_guess = input(Fore.WHITE + 'Pick a letter: \n').upper()
+
+        user_guess = input(Fore.WHITE + 'Pick a letter: \n').upper() # get user to pick a letter
         
         if user_guess in alphabet - guessed_letters:
             guessed_letters.add(user_guess)
@@ -178,6 +172,7 @@ def hangman():
         print(graphics[7])
         print(graphics[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
+        global final_points
         final_points = str(points)
         update_leaderboard()
         end_menu()
@@ -190,6 +185,9 @@ def hangman():
 
 
 def display_instructions():
+    '''
+    display instructions from menu items
+    '''
     print(game_rules)
     while True:        
         go_back = input(Fore.WHITE + 'Please hit B to go back \n').upper()

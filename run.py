@@ -8,6 +8,7 @@ import time
 from hangman_parts import graphics
 from hangman_parts import LOGO
 from hangman_parts import game_rules
+from prettytable import PrettyTable
 
 
 SCOPE = [
@@ -60,10 +61,12 @@ def display_leaderboard():
     Displays the top 10 scores
     Filters to only show users top score so same user is not displayed multiple times
     """
-    leaderboard = SHEET.worksheet('leaderboard')
-    leaderboard_data = leaderboard.get_all_values()
-
-    print(leaderboard_data)
+    
+    table = PrettyTable()
+    table.field_names = SHEET.worksheet('leaderboard').row_values(1)
+    leaderboard_data = SHEET.worksheet('leaderboard').get_all_values()[1:]
+    table.add_rows(leaderboard_data)
+    print(table)
 
     while True:        
         go_back = input(Fore.WHITE + 'Please hit B to go back \n').upper()

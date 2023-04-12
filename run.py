@@ -45,6 +45,16 @@ def get_word(word_options):
     return word.upper()
 
 
+def update_leaderboard():
+    '''
+    Create leaderboard entry and add to leaderboard
+    '''
+    entry = [username,final_points]
+    leaderboard = SHEET.worksheet('leaderboard')
+    leaderboard.append_row(entry)
+    print(f'leaderboard updated')
+
+
 def welcome_msg():
     '''
     welcome message and username input
@@ -54,6 +64,7 @@ def welcome_msg():
     type(f"E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
     while True:
+            global username
             username = input(Fore.WHITE + 'Enter a username: \n')
             if len(username) == 0:
                 print(f"{Fore.RED}Please enter a valid username to continue!")
@@ -126,7 +137,9 @@ def hangman():
     guessed_letters = set()
     wrong = 0
     lives = 7
+    global final_points
     points = (len(selected_word) * 10) + 50
+    
 
     while len(word_letters) > 0 and lives > 0:
         print(graphics[wrong])
@@ -165,10 +178,14 @@ def hangman():
         print(graphics[7])
         print(graphics[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
+        final_points = str(points)
+        update_leaderboard()
         end_menu()
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
         print(graphics[8])
+        final_points = str(points)
+        update_leaderboard()
         end_menu()
 
 
@@ -183,6 +200,7 @@ def display_instructions():
 
 welcome_msg()
 game_menu()
+
 
 
 

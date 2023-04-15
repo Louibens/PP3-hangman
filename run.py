@@ -22,8 +22,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
-words = SHEET.worksheet('words')
-word_options = words.get_all_values() #returns list of lists
+WORD_OPTIONS = SHEET.worksheet('words').get_all_values() #returns list of lists
 
 def type(text):
     '''
@@ -36,12 +35,12 @@ def type(text):
         sys.stdout.flush()
 
 
-def get_word(word_options):
+def get_word(WORD_OPTIONS):
     '''
     Create a single list from words worksheet
     Use Random to select one word from single list
     '''
-    single_list = [item for sublist in word_options for item in sublist]
+    single_list = [item for sublist in WORD_OPTIONS for item in sublist]
     word = random.choice(single_list)
     return word.upper()
 
@@ -50,22 +49,22 @@ def update_leaderboard():
     '''
     Create leaderboard entry and add to leaderboard
     '''
-    entry = [username,final_points]
+    entry = [USERNAME, FINAL_POINTS]
     leaderboard = SHEET.worksheet('leaderboard')
     leaderboard.append_row(entry)
 
-  
 
 def display_leaderboard():
     """
     Displays the top 10 scores
     Filters to only show users top score so same user is not displayed multiple times
     """
-    
     table = PrettyTable()
     table.field_names = SHEET.worksheet('leaderboard').row_values(1)
-    leaderboard_data = SHEET.worksheet('leaderboard').get_all_values()[1:]
-    table.add_rows(leaderboard_data)
+    data = SHEET.worksheet('leaderboard').get_all_values()
+    sorted_data = sorted(data[1:], key=lambda x: int(x[1]), reverse=True) # sorts worksheet data by second column values
+    top_ten = sorted_data[:10]
+    table.add_rows(top_ten)
     print(table)
 
     while True:        
@@ -79,17 +78,17 @@ def welcome_msg():
     '''
     welcome message and username input
     '''
+    global USERNAME
     type(f'T H A N K   Y O U   F O R   V I S I T I N G   M Y   G A M E   O F\t\n') 
     print(LOGO)
     type(f"E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
     while True:
-            global username
-            username = input(Fore.WHITE + 'Enter a username: \n').capitalize()
-            if len(username) == 0:
+            USERNAME = input(Fore.WHITE + 'Enter a username: \n').capitalize()
+            if len(USERNAME) == 0:
                 print(f"{Fore.RED}Please enter a valid username to continue!")
             else:
-                return username
+                break
         
 
 def game_menu():
@@ -146,11 +145,11 @@ def hangman():
     use get_word function to select random word and begin game
     '''
     print("\n")
-    print(f"Great! Let's get started!")
+    print(f"Great! Let's get started {USERNAME}!")
     type(f"S E L E C T I N G   W O R D . . . ."'\n')
     type(f"L E T 'S   G O!!"'\n')
     
-    selected_word = get_word(word_options) # use get_word function to randomly select a word from the words worksheet
+    selected_word = get_word(WORD_OPTIONS) # use get_word function to randomly select a word from the words worksheet
     word_letters = set(selected_word) # identify letters in the word
     alphabet = set(string.ascii_uppercase) 
     guessed_letters = set()
@@ -193,14 +192,14 @@ def hangman():
         print(graphics[7])
         print(graphics[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
-        global final_points
-        final_points = str(points)
+        global FINAL_POINTS
+        FINAL_POINTS = str(points)
         update_leaderboard()
         end_menu()
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ', selected_word, 'You scored', points, 'points!\n')
         print(graphics[8])
-        final_points = str(points)
+        FINAL_POINTS = str(points)
         update_leaderboard()
         end_menu()
 

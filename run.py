@@ -5,9 +5,9 @@ import string
 from colorama import Fore
 import sys
 import time
-from hangman_parts import graphics
+from hangman_parts import GRAPHICS
 from hangman_parts import LOGO
-from hangman_parts import game_rules
+from hangman_parts import GAME_RULES
 from prettytable import PrettyTable
 
 
@@ -168,7 +168,7 @@ def hangman():
     points = (len(selected_word) * 10) + 50
 
     while len(word_letters) > 0 and lives > 0:
-        print(graphics[wrong])
+        print(GRAPHICS[wrong])
         print(Fore.WHITE + 'You have', lives, 'lives left\n')
         print(Fore.WHITE + 'You have used these letters: ', ', '
               .join(guessed_letters), '\n')
@@ -197,8 +197,8 @@ def hangman():
             print(Fore.RED + 'Invalid choice. Please choose a '
                   'letter of the alphabet.\n')
     if lives == 0:
-        print(graphics[7])
-        print(graphics[9])
+        print(GRAPHICS[7])
+        print(GRAPHICS[9])
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
         global FINAL_POINTS
         FINAL_POINTS = str(points)
@@ -207,7 +207,7 @@ def hangman():
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ',
               selected_word, 'You scored', points, 'points!\n')
-        print(graphics[8])
+        print(GRAPHICS[8])
         FINAL_POINTS = str(points)
         update_leaderboard()
         end_menu()
@@ -217,7 +217,7 @@ def display_instructions():
     '''
     display instructions from menu items
     '''
-    print(game_rules)
+    print(GAME_RULES)
     while True:
         go_back = input(Fore.WHITE + 'Please hit B to go back \n').upper()
         if go_back == 'B':

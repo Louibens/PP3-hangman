@@ -85,7 +85,7 @@ def welcome_msg():
     welcome message and username input
     '''
     global USERNAME
-    print("\033c") #  clear the screen
+    print("\033c")  # clear the screen
     type('T H A N K   Y O U   F O R   V I S I T I N G   M Y   G A M E   O F\n')
     print(LOGO)
     type("E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')

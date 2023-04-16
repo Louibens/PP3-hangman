@@ -44,20 +44,30 @@ Users will be able to enter their username, play the game of hangman and view a 
 
     - Game starts by displaying typed message to welcome user to the game of hangman.
 
-
+![image](/docs/game_screenshot.png)
     
 - __F02 Username__
 
     - The user is invited to enter their name in order to continue.
     - The user will see an error if they do not enter a name.
 
+![image](/docs/HM_username.png)
 
-- __F03 Instructions screen__
+- __F03 Menu__
+
+    - The user is invited to enter their name in order to continue.
+    - The user will see an error if they do not enter a name.
+
+![image](/docs/HM_menu.png)
+
+- __F04 Instructions screen__
     
     - The user can see how the game is played.
     - The user can return to the main menu.
     
-- __F04 Hangman screen__
+![image](/docs/HM_instructions.png)
+
+- __F05 Hangman screen__
     
     - The user can see how many points they have.
     - The user can see how many letters are in the randomly selected word.
@@ -65,11 +75,14 @@ Users will be able to enter their username, play the game of hangman and view a 
     - The user can see which letters are in the selected word.
     - The user can see a hangman graphic illustrating the hangman body parts.
     
-- __F05 Leaderboard screen__
+![image](/docs/HM_gameplay.png)
+
+- __F06 Leaderboard screen__
     
     - The user can see the top 10 leaderboard.
     - The user can return to the main menu.
     
+![image](/docs/HM_leaderboard.png)    
 
 #### Future Features
 
@@ -92,14 +105,6 @@ Users will be able to enter their username, play the game of hangman and view a 
 
     ![image](/docs/flowchart.png)
 
-#### Home Screen chart
-![image]( )
-
-#### Quiz Screen chart
-![image]( )
-
-#### Leaderboard Screen chart
-![image]( )
 
 ## Technologies Used
 
@@ -118,7 +123,9 @@ Users will be able to enter their username, play the game of hangman and view a 
 
 * [colorama](https://pypi.org/project/colorama/) - to add colour to the text displayed to user.
 
-* [string](https://docs.python.org/3/library/string.html?highlight=string#module-string) - .
+* [string](https://docs.python.org/3/library/string.html?highlight=string#module-string) - to import alphabet letters to verify and record users entry.
+
+* [PrettyTable](https://pypi.org/project/prettytable/) - to display leaderboard scores.
 
 ### Frameworks, Libraries & Programs Used
 
@@ -144,19 +151,16 @@ This project used:
 
  ### Automated Validator Testing
 
-- [HTML Validator](https://validator.w3.org/)
+- [Python Validator](https://validator.w3.org/)
 
-    - result for index.html
+    - result for run.py
 
-    ![image]( )
+    ![image](/docs/linter-resolved.png)
 
- - [CSS Validator](https://jigsaw.w3.org/css-validator/)
+    2 issues below flagged and have been resolved 
 
-    ![image]( )
-
-- [PageSpeed Insights](https://pagespeed.web.dev/)
-
-
+    - 97: W293 blank line contains whitespace
+    - 229: W292 no newline at end of file
 
 ## Deployment
 
@@ -185,6 +189,9 @@ This project used:
 - Research ways to code hangman game Youtube [Link](https://www.youtube.com/watch?v=7sVnul-StrU&t=944s)
 - Research ways to code hangman game YouTube provided by [freeCodeCamp Youtube](https://www.youtube.com/watch?v=8ext9G7xspg)
 - Typewriter effect researched on Stack Overflow [Link](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
+- Clear terminal screen researched on Stack Overflow [Link](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+- How to sort leaderboard by score and show top 10 researched on Stack Overflow [Link](https://stackoverflow.com/questions/8966538/syntax-behind-sortedkey-lambda)
+- How to handle line too long error researched on Stack Overflow [Link](https://stackoverflow.com/questions/53158284/python-giving-a-e501-line-too-long-error)
 
 ### Acknowledgements
 

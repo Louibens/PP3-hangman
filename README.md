@@ -147,7 +147,7 @@ This project used:
 
 ### Manual Test Cases and Results
 
-- kiku
+![image](/docs/manual_testing.png)
 
  ### Automated Validator Testing
 
@@ -166,22 +166,35 @@ This project used:
 
 ### How this site was deployed
 
-- Login to Github
-- gegege
+- Login to Heroku
+- On the Dashboards page click 'New' and select 'Create New App'
+- Enter a unique app name and select your region. Then click 'Create App' 
+- On the next page displayed, click on the Settings tab.
+- Click 'Reveal Config Vars' and enter PORT as key and 8000 as the value. Click 'Add'
+- Also add CREDS as Key and the google credentials into the value box.
+- In the Buildpack section, select Python from 'Add Buildpack' and Save
+- In the same Buildpack section, select node.js from 'Add Buildpack' and Save. Node.js to be done after Python as needs to be in this order.
+- Go to the Deploy tab and choose Gibhub as the deployment method.
+- Find the repository name and connect.
+- At the bottom of the page select to deploy manually or automatically.
+- A link to the deployed page can be found once deployment is complete
+
+
+  The live link can be found here - [Hangman](https://pp3-hangman-lb.herokuapp.com/) 
   
 ### How to clone the repository
 
-- vree
+- Go to the https://github.com/Louibens/PP2-The-World-Quiz repository on GitHub 
+- Click the "Fork" button in the top right corner
 
 ### How to clone the repository
 
-- Ggeerebe
+- Go to the https://github.com/Louibens/PP2-The-World-Quiz/ repository on GitHub 
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
 
 ## Credits
-
-### Content
-
-- Avvfdve
 
 ### Code research
 
@@ -195,5 +208,4 @@ This project used:
 
 ### Acknowledgements
 
-- Thank you to my family that have made the time for me to get my head around javascript (to some extent). And for continually testing and providing feedback so I could push myself and improve my knowledge along with the site.
-- A massive thanks also goes to my mentor, Elaine Roche, who continues to support me and help me to grow with her excellent feedback and expertise which has been much appreciated throughout the development of this project.
+- Thanks to my mentor, Elaine Roche, who continues to support me and help me to grow with her excellent feedback and expertise which has been much appreciated throughout the development of this project.

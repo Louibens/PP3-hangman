@@ -94,7 +94,7 @@ def welcome_msg():
             print(f"{Fore.RED}Please enter a valid username to continue!")
         else:
             break
-        
+
 
 def game_menu():
     '''

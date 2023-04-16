@@ -62,6 +62,7 @@ def display_leaderboard():
     Filters to only show users top score
     so same user is not displayed multiple times
     """
+    print("TOP 10 SCORES")
     table = PrettyTable()
     table.field_names = SHEET.worksheet('leaderboard').row_values(1)
     data = SHEET.worksheet('leaderboard').get_all_values()
@@ -84,6 +85,7 @@ def welcome_msg():
     welcome message and username input
     '''
     global USERNAME
+    print("\033c") #  clear the screen
     type('T H A N K   Y O U   F O R   V I S I T I N G   M Y   G A M E   O F\n')
     print(LOGO)
     type("E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
@@ -192,7 +194,7 @@ def hangman():
             print(Fore.RED + 'You have already picked', user_guess,
                   '. Please try again.\n')
         else:
-            print(Fore.RED + 'Invalid choice. Please choose a'
+            print(Fore.RED + 'Invalid choice. Please choose a '
                   'letter of the alphabet.\n')
     if lives == 0:
         print(graphics[7])

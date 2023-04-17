@@ -6,6 +6,7 @@
 
 This is a game of Hangman built using Python which runs in the Code Institute mock terminal on Heroku.
 Users will be able to enter their username, play the game of hangman and view a leaderboard. 
+The leaderboard and a list of words are stored on a google sheet.
 
 
 ## Index – Table of Contents
@@ -24,17 +25,17 @@ Users will be able to enter their username, play the game of hangman and view a 
     -   #### First Time Visitor Goals
         1. As a First Time Visitor, I want to easily understand the main purpose of the site.
         2. As a First Time Visitor, I want to be able to easily view the instructions on how to play.
-        3. As a First Time Visitor, I want to be able to easily interact with the site to tner my username.
-        4. As a First Time Visitor, I want to be able to access the leaderboard.
+        3. As a First Time Visitor, I want to be able to easily interact with the site to enter my username.
+        4. As a First Time Visitor, I want to be able to easily access the leaderboard.
         5. As a First Time Visitor, I want to be able to easily play another game or quit when I want.
         
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to be able to access and view the quiz quickly and easily.
+        1. As a Returning Visitor, I want to be able to access and view the game quickly and easily.
 
     -   #### Frequent Visitor Goals
     
-        1. As a Frequent Visitor, I want to be able to find different categories to keep the game interesting.
+        1. As a Frequent Visitor, I want to be able to find different categories or levels to keep the game interesting.
       
 ## Features
 
@@ -55,14 +56,14 @@ Users will be able to enter their username, play the game of hangman and view a 
 
 - __F03 Menu__
 
-    - The user is invited to enter their name in order to continue.
-    - The user will see an error if they do not enter a name.
+    - The user must choose an option from the menu.
+    - The user will see an error if they do not enter a valid option.
 
 ![image](/docs/HM_menu.png)
 
 - __F04 Instructions screen__
     
-    - The user can see how the game is played.
+    - The user can see how to play the game.
     - The user can return to the main menu.
     
 ![image](/docs/HM_instructions.png)
@@ -86,7 +87,7 @@ Users will be able to enter their username, play the game of hangman and view a 
 
 #### Future Features
 
-- Categories can be added for future development to ensure return users are getting value and finding new things to keep them interested
+- Categories/levels can be added for future development to ensure return users are getting value and finding new things to keep them interested.
 
 
 ## Design
@@ -151,7 +152,7 @@ This project used:
 
  ### Automated Validator Testing
 
-- [Python Validator](https://validator.w3.org/)
+- [Python Validator](https://pep8ci.herokuapp.com)
 
     - result for run.py
 
@@ -166,30 +167,30 @@ This project used:
 
 ### How this site was deployed
 
-- Login to Heroku
-- On the Dashboards page click 'New' and select 'Create New App'
-- Enter a unique app name and select your region. Then click 'Create App' 
+- Login to Heroku.
+- On the Dashboards page click 'New' and select 'Create New App'.
+- Enter a unique app name and select your region. Then click 'Create App' .
 - On the next page displayed, click on the Settings tab.
-- Click 'Reveal Config Vars' and enter PORT as key and 8000 as the value. Click 'Add'
+- Click 'Reveal Config Vars' and enter PORT as key and 8000 as the value. Click 'Add'.
 - Also add CREDS as Key and the google credentials into the value box.
-- In the Buildpack section, select Python from 'Add Buildpack' and Save
+- In the Buildpack section, select Python from 'Add Buildpack' and Save.
 - In the same Buildpack section, select node.js from 'Add Buildpack' and Save. Node.js to be done after Python as needs to be in this order.
 - Go to the Deploy tab and choose Gibhub as the deployment method.
 - Find the repository name and connect.
 - At the bottom of the page select to deploy manually or automatically.
-- A link to the deployed page can be found once deployment is complete
+- A link to the deployed page can be seen once deployment is complete.
 
 
   The live link can be found here - [Hangman](https://pp3-hangman-lb.herokuapp.com/) 
   
 ### How to clone the repository
 
-- Go to the https://github.com/Louibens/PP2-The-World-Quiz repository on GitHub 
+- Go to the [PP3-hangman](https://github.com/Louibens/PP3-hangman) repository on GitHub 
 - Click the "Fork" button in the top right corner
 
 ### How to clone the repository
 
-- Go to the https://github.com/Louibens/PP2-The-World-Quiz/ repository on GitHub 
+- Go to the [PP3-hangman](https://github.com/Louibens/PP3-hangman) repository on GitHub 
 - Click the "Code" button to the right of the screen, click HTTPs and copy the link there
 - Open a GitBash terminal and navigate to the directory where you want to locate the clone
 - On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process

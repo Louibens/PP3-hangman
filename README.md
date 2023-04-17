@@ -2,7 +2,7 @@
 
 [View the live project here](https://pp3-hangman-lb.herokuapp.com/)
 
-![image](put image here)
+![image](/docs/Screenshot_1.png)
 
 This is a game of Hangman built using Python which runs in the Code Institute mock terminal on Heroku.
 Users will be able to enter their username, play the game of hangman and view a leaderboard. 
@@ -162,6 +162,13 @@ This project used:
 
     - 97: W293 blank line contains whitespace
     - 229: W292 no newline at end of file
+
+    - result for hangman-parts.py
+
+    ![image](/docs/linter-parts.png)
+
+    Invalid escape sequence flagged due to how hangman graphics are created. I have been unable to resolve these warnings.
+
 
 ## Deployment
 

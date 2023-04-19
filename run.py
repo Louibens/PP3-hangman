@@ -24,6 +24,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 # returns list of lists
 WORD_OPTIONS = SHEET.worksheet('words').get_all_values()
+username = ''
 
 
 def type(text):
@@ -52,7 +53,7 @@ def update_leaderboard():
     '''
     Create leaderboard entry and add to leaderboard
     '''
-    entry = [USERNAME, FINAL_POINTS]
+    entry = [username, FINAL_POINTS]
     leaderboard = SHEET.worksheet('leaderboard')
     leaderboard.append_row(entry)
 
@@ -84,16 +85,17 @@ def display_leaderboard():
 def welcome_msg():
     '''
     welcome message and username input
+
     '''
-    global USERNAME
     print("\033c")  # clear the screen
     type('T H A N K   Y O U   F O R   V I S I T I N G   M Y   G A M E   O F\n')
     print(LOGO)
     type("E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
+    global username
     while True:
-        USERNAME = input(Fore.WHITE + 'Enter a username: \n').capitalize()
-        if len(USERNAME) == 0:
+        username = input(Fore.WHITE + 'Enter a username: \n').capitalize()
+        if len(username) == 0:
             print(f"{Fore.RED}Please enter a valid username to continue!")
         else:
             break
@@ -119,33 +121,7 @@ def game_menu():
         elif user_choice == 'C':
             display_instructions()
         elif user_choice == 'D':
-            print(f'Thanks for playing {USERNAME}')
-            exit()
-        else:
-            print(Fore.RED + 'That is not a valid option. Please try again.\n')
-
-
-def end_menu():
-    '''
-    present user with menu options at the end of game
-    '''
-    print(f"""{Fore.WHITE}
-        A - PLAY AGAIN
-        B - LEADERBOARD
-        C - INSTRUCTIONS
-        D - EXIT GAME
-        """)
-    while True:
-        user_choice = input(Fore.WHITE + 'Please choose an option from '
-                            'the list above: \n').upper()
-        if user_choice == 'A':
-            hangman()
-        elif user_choice == 'B':
-            display_leaderboard()
-        elif user_choice == 'C':
-            display_instructions()
-        elif user_choice == 'D':
-            print(f'Thanks for playing {USERNAME}')
+            print(f'Thanks for playing {username}')
             exit()
         else:
             print(Fore.RED + 'That is not a valid option. Please try again.\n')
@@ -157,7 +133,7 @@ def hangman():
     Researched elements of below code on FreeCodeCamp youtube - link in readme
     '''
     print("\n")
-    print(f"Great! Let's get started {USERNAME}!")
+    print(f"Great! Let's get started {username}!")
     type("S E L E C T I N G   W O R D . . . ."'\n')
     type("L E T 'S   G O!!"'\n')
     # use get_word function to randomly select a word from the words worksheet
@@ -171,7 +147,7 @@ def hangman():
     points = (len(selected_word) * 10) + 50
 
     while len(word_letters) > 0 and lives > 0:
-        print(GRAPHICS[wrong])
+        print(GRAPHICS[wrong])  # displays appropriate hangman graphic
         print(Fore.WHITE + 'You have', lives, 'lives left\n')
         print(Fore.WHITE + 'You have used these letters: ', ', '
               .join(guessed_letters), '\n')
@@ -200,21 +176,18 @@ def hangman():
             print(Fore.RED + 'Invalid choice. Please choose a '
                   'letter of the alphabet.\n')
     if lives == 0:
-        print(GRAPHICS[7])
-        print(GRAPHICS[9])
+        print(GRAPHICS[7])  # full hangman graphic
+        print(GRAPHICS[9])  # you lose graphic
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
         global FINAL_POINTS
         FINAL_POINTS = str(points)
-        update_leaderboard()
-        end_menu()
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ',
               selected_word, 'You scored', points, 'points!\n')
-        print(GRAPHICS[8])
+        print(GRAPHICS[8])  # you win graphic
         FINAL_POINTS = str(points)
-        update_leaderboard()
-        end_menu()
-
+    update_leaderboard()
+    game_menu()
 
 def display_instructions():
     '''

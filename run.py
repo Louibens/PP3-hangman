@@ -29,6 +29,7 @@ WORD_OPTIONS = SHEET.worksheet('words').get_all_values()
 def type(text):
     '''
     Function to enable typewriter effect
+    Researched code on StackOverflow
     '''
     words = text
     for char in words:
@@ -152,7 +153,8 @@ def end_menu():
 
 def hangman():
     '''
-    use get_word function to select random word and begin game
+    Use get_word function to select random word and begin game.
+    Researched elements of below code on FreeCodeCamp youtube - link in readme
     '''
     print("\n")
     print(f"Great! Let's get started {USERNAME}!")
@@ -161,6 +163,7 @@ def hangman():
     # use get_word function to randomly select a word from the words worksheet
     selected_word = get_word(WORD_OPTIONS)
     word_letters = set(selected_word)  # identify letters in the word
+    # specify letters that are valid user choices
     alphabet = set(string.ascii_uppercase)
     guessed_letters = set()
     wrong = 0
@@ -215,7 +218,7 @@ def hangman():
 
 def display_instructions():
     '''
-    display instructions from menu items
+    display instructions stored in hangman_parts.py
     '''
     print(GAME_RULES)
     while True:

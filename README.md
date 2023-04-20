@@ -169,9 +169,9 @@ This project used:
 
     2 issues below flagged and have been resolved 
 
-        - 97: W293 blank line contains whitespace
-        - 229: W292 no newline at end of file
-
+* 97: W293 blank line contains whitespace
+* 229: W292 no newline at end of file
+    
     - result for hangman-parts.py
 
     ![image](/docs/linter-parts.png)

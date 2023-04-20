@@ -92,7 +92,7 @@ def welcome_msg():
     print(LOGO)
     type("E N T E R   Y O U R   N A M E   T O   C O N T I N U E"'\n')
     print("\n")
-    global username
+    global username  
     while True:
         username = input(Fore.WHITE + 'Enter a username: \n').capitalize()
         if len(username) == 0:
@@ -185,6 +185,7 @@ def hangman():
         print(GRAPHICS[8])  # you win graphic
     update_leaderboard(points)
     game_menu()
+
 
 def display_instructions():
     '''

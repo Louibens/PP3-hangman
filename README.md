@@ -7,6 +7,7 @@
 This is a game of Hangman built using Python which runs in the Code Institute mock terminal on Heroku.
 Users will be able to enter their username, play the game of hangman and view a leaderboard. 
 The leaderboard and a list of words are stored on a google sheet.
+The theme of the quiz is related to Python to give you a clue for guessing words.
 
 
 ## Index – Table of Contents
@@ -101,7 +102,6 @@ The leaderboard and a list of words are stored on a google sheet.
 -   ### Colour
     -   Imported colorama to enable different colour text to improve user experience and user feedback
 
-
 -   ### Flow chart
 
     ![image](/docs/flowchart.png)
@@ -118,7 +118,7 @@ The leaderboard and a list of words are stored on a google sheet.
 
 * [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - to select random words 
 
-* [gspread](https://docs.gspread.org/en/latest/index.html) - to edit worksheets on Google Sheets.
+* [gspread](https://docs.gspread.org/en/latest/index.html) - to access and edit worksheets on Google Sheets.
 
 * [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html) - to connect with Google account and have access to Google Drive.
 
@@ -152,7 +152,7 @@ This project used:
 
  ### Automated Validator Testing
 
-- [Python Validator](https://pep8ci.herokuapp.com)
+ - [Python Validator](https://pep8ci.herokuapp.com)
 
     - result for run.py
 
@@ -169,6 +169,9 @@ This project used:
 
     Invalid escape sequence flagged due to how hangman graphics are created. I have been unable to resolve these warnings.
 
+ ### Additional Testing Comments
+
+ - The 'username' global variable was not updating within the welcome_message function. Following research on [W3schools](https://www.w3schools.com/python/python_variables_global.asp), if you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value. In order to resolve this issue the 'global' keyword was utilised.
 
 ## Deployment
 
@@ -186,7 +189,6 @@ This project used:
 - Find the repository name and connect.
 - At the bottom of the page select to deploy manually or automatically.
 - A link to the deployed page can be seen once deployment is complete.
-
 
   The live link can be found here - [Hangman](https://pp3-hangman-lb.herokuapp.com/) 
   
@@ -213,6 +215,7 @@ This project used:
 - Clear terminal screen researched on Stack Overflow [Link](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 - How to sort leaderboard by score and show top 10 researched on Stack Overflow [Link](https://stackoverflow.com/questions/8966538/syntax-behind-sortedkey-lambda)
 - How to handle line too long error researched on Stack Overflow [Link](https://stackoverflow.com/questions/53158284/python-giving-a-e501-line-too-long-error)
+- How to handle global variables using 'global' keyword [W3schools](https://www.w3schools.com/python/python_variables_global.asp)
 
 ### Acknowledgements
 

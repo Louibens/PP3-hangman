@@ -91,13 +91,8 @@ The theme of the quiz is related to Python to give you a clue for guessing words
     - The points the user starts with are calculated as the number of letters in the word multiplied by 10 plus an extra 50 points.
     - The points are reduced by 10 for each incorrect letter selected.
     - This points system was constructed to address that shorter words are easier to guess.
-<<<<<<< HEAD
     - The user will see their score on the leaderboard if they are in the Top 10.
-    
-=======
-    - The user will see their score on the leaderboard if they are in the Top 10.  
 
->>>>>>> 672afc2f85839d6badc51af9cf988418e1aa5e08
 
 #### Future Features
 

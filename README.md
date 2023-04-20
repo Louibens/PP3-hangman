@@ -184,6 +184,8 @@ This project used:
 
  - The 'username' global variable was not updating within the welcome_message function. Following research on [W3schools](https://www.w3schools.com/python/python_variables_global.asp), if you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value. In order to resolve this issue the 'global' keyword was utilised.
 
+ - Users were able to enter a space as their username which would create a blank username. To resolve this issue, the trim function strip() was added to the username input to remove whitespace and now an error is flagged to user to enter a valid username. This solution was researched [here](https://flexiple.com/python/python-trim/#section3)
+
 ## Deployment
 
 ### How this site was deployed

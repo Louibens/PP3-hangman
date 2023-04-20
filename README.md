@@ -93,7 +93,6 @@ The theme of the quiz is related to Python to give you a clue for guessing words
     - This points system was constructed to address that shorter words are easier to guess.
     - The user will see their score on the leaderboard if they are in the Top 10.
     
-![image](/docs/HM_leaderboard.png)   
 
 #### Future Features
 
@@ -176,7 +175,7 @@ This project used:
 
     ![image](/docs/linter-parts.png)
 
-    Invalid escape sequence flagged due to how hangman graphics are created. I have been unable to resolve these warnings.
+    Linter returned invalid escape sequence warnings which were resolved using raw strings [Link](https://note.nkmk.me/en/python-raw-string-escape/)
 
  ### Additional Testing Comments
 

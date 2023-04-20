@@ -91,13 +91,17 @@ The theme of the quiz is related to Python to give you a clue for guessing words
     - The points the user starts with are calculated as the number of letters in the word multiplied by 10 plus an extra 50 points.
     - The points are reduced by 10 for each incorrect letter selected.
     - This points system was constructed to address that shorter words are easier to guess.
+<<<<<<< HEAD
     - The user will see their score on the leaderboard if they are in the Top 10.
     
+=======
+    - The user will see their score on the leaderboard if they are in the Top 10.  
+
+>>>>>>> 672afc2f85839d6badc51af9cf988418e1aa5e08
 
 #### Future Features
 
 - Categories/levels can be added for future development to ensure return users are getting value and finding new things to keep them interested.
-
 
 ## Design
 
@@ -120,7 +124,6 @@ The theme of the quiz is related to Python to give you a clue for guessing words
 ### Languages Used
 
 -   [Python](https://www.python.org/)
-
 
 ### Python Modules
 
@@ -168,9 +171,9 @@ This project used:
 
     2 issues below flagged and have been resolved 
 
-        - 97: W293 blank line contains whitespace
-        - 229: W292 no newline at end of file
-
+* 97: W293 blank line contains whitespace
+* 229: W292 no newline at end of file
+    
     - result for hangman-parts.py
 
     ![image](/docs/linter-parts.png)
@@ -224,6 +227,7 @@ This project used:
 - How to sort leaderboard by score and show top 10 researched on Stack Overflow [Link](https://stackoverflow.com/questions/8966538/syntax-behind-sortedkey-lambda)
 - How to handle line too long error researched on Stack Overflow [Link](https://stackoverflow.com/questions/53158284/python-giving-a-e501-line-too-long-error)
 - How to handle global variables using 'global' keyword [W3schools](https://www.w3schools.com/python/python_variables_global.asp)
+- How to implement PrettyTable library to display leaderboard [Link](https://pypi.org/project/prettytable/)
 
 ### Acknowledgements
 

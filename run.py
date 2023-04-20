@@ -49,11 +49,11 @@ def get_word(WORD_OPTIONS):
     return word.upper()
 
 
-def update_leaderboard():
+def update_leaderboard(points):
     '''
     Create leaderboard entry and add to leaderboard
     '''
-    entry = [username, FINAL_POINTS]
+    entry = [username, points]
     leaderboard = SHEET.worksheet('leaderboard')
     leaderboard.append_row(entry)
 
@@ -179,14 +179,11 @@ def hangman():
         print(GRAPHICS[7])  # full hangman graphic
         print(GRAPHICS[9])  # you lose graphic
         print(Fore.RED + 'You just died. The word was', selected_word, '\n')
-        global FINAL_POINTS
-        FINAL_POINTS = str(points)
     else:
         print(Fore.GREEN + 'Congratulations! You guessed the word was ',
               selected_word, 'You scored', points, 'points!\n')
         print(GRAPHICS[8])  # you win graphic
-        FINAL_POINTS = str(points)
-    update_leaderboard()
+    update_leaderboard(points)
     game_menu()
 
 def display_instructions():

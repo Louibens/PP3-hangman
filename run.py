@@ -94,7 +94,7 @@ def welcome_msg():
     print("\n")
     global username  
     while True:
-        username = input(Fore.WHITE + 'Enter a username: \n').capitalize()
+        username = input(Fore.WHITE + 'Enter a username: \n').capitalize().strip()
         if len(username) == 0:
             print(f"{Fore.RED}Please enter a valid username to continue!")
         else:

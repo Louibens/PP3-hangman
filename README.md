@@ -86,6 +86,15 @@ The theme of the quiz is related to Python to give you a clue for guessing words
     
 ![image](/docs/HM_leaderboard.png)    
 
+- __F06 User Score__
+    
+    - The points the user starts with are calculated as the number of letters in the word multiplied by 10 plus an extra 50 points.
+    - The points are reduced by 10 for each incorrect letter selected.
+    - This points system was constructed to address that shorter words are easier to guess.
+    - The user will see their score on the leaderboard if they are in the Top 10.
+    
+![image](/docs/HM_leaderboard.png)   
+
 #### Future Features
 
 - Categories/levels can be added for future development to ensure return users are getting value and finding new things to keep them interested.
@@ -156,12 +165,12 @@ This project used:
 
     - result for run.py
 
-    ![image](/docs/linter-resolved.png)
+    ![image](/docs/linter-result.png)
 
     2 issues below flagged and have been resolved 
 
-    - 97: W293 blank line contains whitespace
-    - 229: W292 no newline at end of file
+        - 97: W293 blank line contains whitespace
+        - 229: W292 no newline at end of file
 
     - result for hangman-parts.py
 

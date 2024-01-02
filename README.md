@@ -1,6 +1,6 @@
 # Hangman - Python
 
-[View the live project here](https://pp3-hangman-lb.herokuapp.com/)
+[View the live project here](https://pp3-hangman-lb.onrender.com/)
 
 ![image](/docs/Screenshot_1.png)
 
@@ -198,7 +198,7 @@ This project used:
 - At the bottom of the page select to deploy manually or automatically.
 - A link to the deployed page can be seen once deployment is complete.
 
-  The live link can be found here - [Hangman](https://pp3-hangman-lb.herokuapp.com/) 
+  The live link can be found here - [Hangman](https://pp3-hangman-lb.onrender.com/) 
   
 ### How to clone the repository
 
